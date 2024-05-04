@@ -1,0 +1,2 @@
+# pegasus
+A WordPress Theme
