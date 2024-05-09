@@ -7,10 +7,17 @@
  * 
  */
 
+
+if ( ! defined("PEGASUS_DIR_PATH") ) {
+   define('PEGASUS_DIR_PATH', untrailingslashit( get_template_directory() ) );
+}
+
+ require_once PEGASUS_DIR_PATH . '/inc/helpers/autoloader.php' ;
+
  function pegasus_enqueue_scripts() {
 
     // Stylesheets
-    wp_enqueue_style('stylesheet', get_stylesheet_uri(), [], filemtime( get_template_directory() . '/style.css') );
+    wp_register_style('stylesheet', get_stylesheet_uri(), [], filemtime( get_template_directory() . '/style.css') );
     wp_register_style('tailwind-css', 'https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css', [], false, 'all' );
 
     // Scripts
